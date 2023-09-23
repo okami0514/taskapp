@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RealmSwift   // ←追加
+import RealmSwift    // 追加する
 import UserNotifications    // 追加
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

@@ -109,11 +109,22 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="pRK-1G-0sw">
-                                <rect key="frame" x="0.0" y="349" width="393" height="120"/>
+                                <rect key="frame" x="0.0" y="424" width="393" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="e2E-8k-lU4"/>
                                 </constraints>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyQ-0P-pgv">
+                                <rect key="frame" x="10" y="349" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOC-q5-gUH">
+                                <rect key="frame" x="10" y="380" width="373" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9m-5m-njW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,22 +132,29 @@
                             <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="6xT-4J-GXO" secondAttribute="trailing" constant="10" id="096-NE-wvK"/>
                             <constraint firstItem="6xT-4J-GXO" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="83l-1t-Fgz"/>
                             <constraint firstItem="sJ7-zv-782" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="AAY-hE-NyL"/>
+                            <constraint firstItem="jyQ-0P-pgv" firstAttribute="top" secondItem="6xT-4J-GXO" secondAttribute="bottom" constant="10" id="Cdz-5b-u1q"/>
                             <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="elx-dk-aTc" secondAttribute="trailing" constant="10" id="Hid-UH-JIa"/>
-                            <constraint firstItem="pRK-1G-0sw" firstAttribute="top" secondItem="6xT-4J-GXO" secondAttribute="bottom" constant="10" id="LqX-SO-9WK"/>
+                            <constraint firstItem="pRK-1G-0sw" firstAttribute="top" secondItem="kOC-q5-gUH" secondAttribute="bottom" constant="10" id="Jnq-A5-Miz"/>
                             <constraint firstItem="elx-dk-aTc" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="Omh-1y-0w2"/>
+                            <constraint firstItem="jyQ-0P-pgv" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="S2V-em-zxd"/>
                             <constraint firstItem="6xT-4J-GXO" firstAttribute="top" secondItem="elx-dk-aTc" secondAttribute="bottom" constant="10" id="Wtn-nA-uXE"/>
                             <constraint firstItem="pRK-1G-0sw" firstAttribute="leading" secondItem="Qag-RG-BKa" secondAttribute="leading" id="Y4B-Lu-o7Q"/>
                             <constraint firstItem="pgq-LG-GWv" firstAttribute="top" secondItem="c9m-5m-njW" secondAttribute="top" constant="10" id="ZbJ-la-ZGK"/>
+                            <constraint firstItem="kOC-q5-gUH" firstAttribute="top" secondItem="jyQ-0P-pgv" secondAttribute="bottom" constant="10" id="bIx-1X-Hu8"/>
                             <constraint firstItem="elx-dk-aTc" firstAttribute="top" secondItem="sJ7-zv-782" secondAttribute="bottom" constant="10" id="eLV-pn-14T"/>
                             <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="sJ7-zv-782" secondAttribute="trailing" constant="10" id="ia6-Cx-8wV"/>
+                            <constraint firstItem="kOC-q5-gUH" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="jaj-ET-JGR"/>
                             <constraint firstItem="sJ7-zv-782" firstAttribute="top" secondItem="pgq-LG-GWv" secondAttribute="bottom" constant="10" id="l1u-dd-x5Y"/>
                             <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="pgq-LG-GWv" secondAttribute="trailing" constant="10" id="l7u-pi-EwY"/>
+                            <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="jyQ-0P-pgv" secondAttribute="trailing" constant="10" id="pYc-ex-DMS"/>
+                            <constraint firstItem="c9m-5m-njW" firstAttribute="trailing" secondItem="kOC-q5-gUH" secondAttribute="trailing" constant="10" id="plg-WF-a5G"/>
                             <constraint firstAttribute="trailing" secondItem="pRK-1G-0sw" secondAttribute="trailing" id="vdt-dV-ab4"/>
                             <constraint firstItem="pgq-LG-GWv" firstAttribute="leading" secondItem="c9m-5m-njW" secondAttribute="leading" constant="10" id="ypU-Wb-vOh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9E7-r0-UyF"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="kOC-q5-gUH" id="yQV-pc-zRf"/>
                         <outlet property="contentsTextView" destination="6xT-4J-GXO" id="X4T-SD-YcK"/>
                         <outlet property="datePicker" destination="pRK-1G-0sw" id="TeC-c1-jdO"/>
                         <outlet property="titleTextField" destination="sJ7-zv-782" id="PMo-Oe-3Ay"/>
