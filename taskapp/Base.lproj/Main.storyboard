@@ -50,13 +50,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LKf-Jb-nra" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2vc-gT-pVF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LKf-Jb-nra" secondAttribute="trailing" id="93W-hC-Bqn"/>
-                            <constraint firstItem="LKf-Jb-nra" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PcF-UI-Snf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LKf-Jb-nra" secondAttribute="bottom" id="wEO-eI-WVV"/>
+                            <constraint firstItem="LKf-Jb-nra" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ABJ-nA-gaE"/>
+                            <constraint firstItem="LKf-Jb-nra" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JwG-5r-H8l"/>
+                            <constraint firstItem="LKf-Jb-nra" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sbr-bM-LxF"/>
+                            <constraint firstItem="LKf-Jb-nra" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ctg-1b-P7K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2xL-L0-NDZ">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="iR7-jd-ZhG">
+                            <rect key="frame" x="85.666666666666686" y="5" width="222" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mqa-ni-vB0">
                             <connections>
                                 <segue destination="Mj3-s8-iOr" kind="show" id="ZhM-RG-woa"/>
@@ -64,13 +71,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterText" destination="iR7-jd-ZhG" id="LaN-r5-kpo"/>
                         <outlet property="tableView" destination="LKf-Jb-nra" id="XkB-e0-PB2"/>
                         <segue destination="Mj3-s8-iOr" kind="show" identifier="cellSegue" id="uhK-Tb-jn4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1055.7251908396945" y="-27.464788732394368"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="rL9-8T-Q61">

@@ -9,13 +9,15 @@ import UIKit
 import RealmSwift    // 追加する
 import UserNotifications    // 追加
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterText: UITextField!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()  // ←追加
-    
+
+
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
@@ -27,6 +29,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.fillerRowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // UITextFieldのプロパティを設定
+        filterText.delegate = self
+        filterText.placeholder = "Enter text"
+        filterText.returnKeyType = .done // Returnキーのタイプを設定
+    }
+    
+    // Returnキーが押されたときに呼ばれるメソッド
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        taskArray = try! Realm().objects(Task.self).where({
+            $0.category == filterText.text!
+        }).sorted(byKeyPath: "date", ascending: true)  // ←追加
+        textField.resignFirstResponder() // キーボードを閉じる（オプション）
+        tableView.reloadData()
+        return true
     }
     
     // 入力画面から戻ってきた時に TableView を更新させる
