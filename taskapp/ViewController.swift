@@ -38,6 +38,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Returnキーが押されたときに呼ばれるメソッド
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if filterText.text?.isEmpty ?? true {
+            taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+            tableView.reloadData()
+            return true
+        }
         taskArray = try! Realm().objects(Task.self).where({
             $0.category == filterText.text!
         }).sorted(byKeyPath: "date", ascending: true)  // ←追加
