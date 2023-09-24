@@ -16,8 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Realmインスタンスを取得する
     let realm = try! Realm()  // ←追加
-
-
+    
+    
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
@@ -102,17 +102,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if editingStyle == .delete {
             // 削除するタスクを取得する
             let task = self.taskArray[indexPath.row]
-
+            
             // ローカル通知をキャンセルする
             let center = UNUserNotificationCenter.current()
             center.removePendingNotificationRequests(withIdentifiers: [String(task.id.stringValue)])
-
+            
             // データベースから削除する
             try! realm.write {
                 self.realm.delete(task)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-
+            
             // 未通知のローカル通知一覧をログ出力
             center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
                 for request in requests {
